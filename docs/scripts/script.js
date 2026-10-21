@@ -33,7 +33,7 @@ function art(kind) {
 }
 
 // Путь к папке с фотографиями относительно pages/index.html
-const ASSETS_PATH = "../assets/";
+const ASSETS_PATH = "assets/";
 
 // Сопоставление: id блюда -> имя файла в assets.
 // Если файла нет, скрипт покажет SVG-заглушку (см. обработчик onerror ниже).
