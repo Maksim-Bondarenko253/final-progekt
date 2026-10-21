@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Краш-пицца — меню и заказ за столиком</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html" aria-current="page">
+        <span class="brand-mark">К</span><span>Краш-пицца</span>
+      </a>
+      <p class="restaurant-note">городская пиццерия · ежедневно 10:00–21:00</p>
+      <div class="table-box">
+        <label for="table-number">Ваш столик</label>
+        <input id="table-number" type="number" min="1" max="20" value="7">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Меню пиццерии</p>
+          <h1 id="page-title">Пицца, ради которой хочется остаться подольше.</h1>
+        </div>
+        <p>
+          Выберите блюда — мы покажем ориентировочное время приготовления и передадим заказ прямо
+          на кухню.
+        </p>
+      </section>
+
+      <div class="layout">
+        <section class="menu" aria-labelledby="menu-title">
+          <div class="menu-head">
+            <h2 id="menu-title">Меню</h2>
+            <span>10:00–21:00 · 20 столиков</span>
+          </div>
+          <div class="category">
+            <h3>Пицца</h3>
+            <div id="pizzas"></div>
+          </div>
+          <div class="category">
+            <h3>Фокачча</h3>
+            <div id="focaccia"></div>
+          </div>
+          <div class="category">
+            <h3>Лимонады · 0,5 л</h3>
+            <div id="lemonades"></div>
+          </div>
+        </section>
+
+        <aside class="order" aria-labelledby="order-title">
+          <div class="order-heading">
+            <h2 id="order-title">Ваш заказ</h2>
+            <span id="item-count">0 позиций</span>
+          </div>
+          <div id="cart">
+            <p class="empty">Пока здесь пусто.<br>Добавьте блюдо из меню.</p>
+          </div>
+          <div class="summary">
+            <div class="summary-row"><span>Сумма</span><strong id="subtotal">0 ₽</strong></div>
+            <div class="summary-row summary-total">
+              <span>Итого</span><strong id="total">0 ₽</strong>
+            </div>
+          </div>
+          <div class="time-note">
+            <span aria-hidden="true">◷</span>
+            <div>
+              <b id="prep-time">Время появится здесь</b>
+              <span>Большое количество одинаковых блюд увеличивает время приготовления.</span>
+            </div>
+          </div>
+          <button class="order-btn" id="send-order" type="button" disabled>
+            Отправить на кухню
+          </button>
+          <p class="pay-note">Без онлайн-оплаты · оплатите после еды</p>
+          <section class="ordered" id="ordered" aria-labelledby="ordered-title">
+            <h3 id="ordered-title">Уже заказали</h3>
+            <div class="ordered-list" id="ordered-list"></div>
+            <p class="ordered-note">Этот список сохранён для вашего столика.</p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">Краш-пицца · горячая пицца и спокойный вечер за одним столиком.</div>
+  </footer>
+
+  <div class="modal" id="confirmation" role="dialog" aria-modal="true" aria-labelledby="confirmation-title" hidden>
+    <div class="modal-card">
+      <div class="modal-mark" aria-hidden="true">✓</div>
+      <h2 id="confirmation-title">Заказ принят</h2>
+      <p id="confirmation-text">
+        Когда всё будет готово, мы принесём заказ прямо к вашему столику.
+      </p>
+      <button id="close-confirmation" type="button">Понятно</button>
+    </div>
+  </div>
+
+  <script src="../scripts/script.js"></script>
+</body>
+</html>
